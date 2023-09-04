@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: product-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/products
+    username: root
+    password: mayanksql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+logging:
+  level:
+    root: info # Logging level of the application
+    org.hibernate.type.descriptor.sql.BasicBinder: trace # Logging level of the SQL queries
+    org.hibernate.SQL: trace # Logging level of the SQL queries
+    in.stackroute: debug
+  pattern:
+    console: "%d{dd/MM/yyy HH:mm:ss} %-5level - %msg%n" # Pattern of the console logs
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Pattern of the file logs
+  file:
+    name: logs\product-service.log # Name of the log file
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB # Maximum size of the log file
