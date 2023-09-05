@@ -1,11 +1,7 @@
 package in.stackroute.model;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "inventory_details")
@@ -13,25 +9,18 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Inventory {
 
     @Id
     @GeneratedValue
     private int id;
 
-
-    @Column(nullable = false)
     private int quantity;
 
-    @Column(nullable = false)
     private int productId;
 
-    @Column(nullable = false)
-    private String ProductName;
+    private String productName;
 
-    public Inventory(int quantity, int productId, String productName) {
-        this.quantity = quantity;
-        this.productId = productId;
-        ProductName = productName;
-    }
+    private String skuCode;
 }

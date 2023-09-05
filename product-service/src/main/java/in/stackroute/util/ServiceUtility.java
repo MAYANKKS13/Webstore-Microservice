@@ -12,11 +12,18 @@ import org.springframework.stereotype.Component;
 public class ServiceUtility {
 
     public Product toEntity(ProductDto dto) {
-        return new Product(dto.productName(), dto.description(), dto.unitPrice());
+        return Product
+                .builder()
+                .productName(dto.productName())
+                .skuCode(dto.skuCode())
+                .description(dto.description())
+                .unitPrice(dto.unitPrice())
+                .build();
+
     }
 
     public ProductDto toDto(Product p) {
-        return new ProductDto(p.getProductId(), p.getProductName(), p.getDescription(), p.getUnitPrice());
+        return new ProductDto(p.getProductId(), p.getProductName(), p.getSkuCode(), p.getDescription(), p.getUnitPrice());
     }
 
 

@@ -2,9 +2,11 @@ package in.stackroute.controller;
 
 
 import in.stackroute.dto.ProductDto;
+import in.stackroute.exceptions.ProductAlreadyExists;
 import in.stackroute.exceptions.ProductNotFoundException;
 import in.stackroute.model.Product;
 import in.stackroute.util.ServiceUtility;
+import jakarta.validation.Valid;
 import in.stackroute.service.ProductService;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -17,9 +19,7 @@ import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 @RestController
@@ -31,12 +31,17 @@ public class ProductController {
     private final ProductService productService;
     private final Logger logger = LoggerFactory.getLogger(ProductController.class);
 
+
+
     @PostMapping
-    public ResponseEntity<ProductDto> createProduct(@RequestBody ProductDto dto)
+    public ResponseEntity<ProductDto> createProduct(@Valid @RequestBody ProductDto dto)
     {
-        logger.debug("Creating product: {}", dto);
+
         var product = util.toEntity(dto);
-        logger.debug("Product to be saved: {}", product);
+        productService.findBySkuCode(product.getSkuCode()).ifPresent(p -> {
+            throw new ProductAlreadyExists("Product with skuCode " + product.getSkuCode() + " already exists");
+        });
+
         var savedProduct = productService.save(product);
         var savedProductDto = util.toDto(savedProduct);
         return ResponseEntity.status(HttpStatusCode.valueOf(201)).body(savedProductDto);
@@ -52,6 +57,28 @@ public class ProductController {
         var productDto = util.toDto(product);
         return ResponseEntity.ok(productDto);
     }
+
+
+
+    @GetMapping
+    public ResponseEntity<List<ProductDto>> getProductByName(@RequestParam("name") String name) {
+        var productList = productService.findByProductName(name);
+        if (productList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        var productDtoList = productList.stream().map(product -> util.toDto(product)).toList();
+        return ResponseEntity.ok(productDtoList);
+    }
+
+    // GET http://localhost:8080/api/v1/products?skuCode=ABC123
+    @GetMapping(params = "skuCode")
+    public ResponseEntity<ProductDto> getProductBySkuCode(@RequestParam("skuCode") String skuCode) {
+        var product = productService.findBySkuCode(skuCode)
+                .orElseThrow(() -> new ProductNotFoundException("Product with skuCode " + skuCode + " not found"));
+        var productDto = util.toDto(product);
+        return ResponseEntity.ok(productDto);
+    }
+
 
 
 
@@ -72,23 +99,6 @@ public class ProductController {
     {
         productService.deleteById(id);
         return ResponseEntity.noContent().build();
-    }
-
-
-
-
-    @ExceptionHandler(ProductNotFoundException.class)
-    public ResponseEntity<Object> handleProductNotFoundException(HttpHeaders headers,
-                                                                 @NotNull ProductNotFoundException ex)
-    {
-
-        Map<String,Object> response = new HashMap<>();
-        response.put("timestamp",System.currentTimeMillis());
-        response.put("status", HttpStatus.NOT_FOUND.value());
-        response.put("message",ex.getMessage());
-        return new ResponseEntity<>(response,headers,HttpStatus.NOT_FOUND);
-
-
     }
 
 

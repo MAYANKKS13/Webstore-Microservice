@@ -1,16 +1,16 @@
 package in.stackroute.dto;
 
-import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Min;
 
 public record InventoryDto(
 
         int id,
-        @NotEmpty
+
         int quantity,
-        @NotEmpty
+
         int productId,
-        @NotEmpty
-        String ProductName
+
+        String productName
 
 
 ) {

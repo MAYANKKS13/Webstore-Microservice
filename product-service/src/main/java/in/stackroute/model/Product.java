@@ -11,6 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
+@Builder
 public class Product {
 
     @Id
@@ -19,6 +20,10 @@ public class Product {
 
     @Column(nullable = false)
     private  String productName;
+
+    @Column(unique = true, nullable = false)
+    private String skuCode;
+
 
     @Column(nullable = false)
     private String description;

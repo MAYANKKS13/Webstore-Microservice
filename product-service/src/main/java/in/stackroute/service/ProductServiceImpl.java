@@ -5,10 +5,15 @@ import in.stackroute.exceptions.ProductNotFoundException;
 import in.stackroute.model.Product;
 import in.stackroute.repository.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
@@ -17,11 +22,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product save(Product product) {
+
+        log.debug("Saving product to database {} ", product);
         return productRepository.save(product);
     }
 
     @Override
     public Product findById(int productId) {
+
+        log.debug("Finding product with id {}", productId);
+
         return productRepository
                 .findById(productId)
                 .orElseThrow(
@@ -32,11 +42,25 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product update(Product product) {
+
         return productRepository.save(product);
     }
 
     @Override
     public void deleteById(int productId) {
         productRepository.deleteById(productId);
+    }
+
+
+    @Override
+    public Optional<Product> findBySkuCode(String skuCode) {
+        log.debug("Finding product with skuCode {}", skuCode);
+        return productRepository.findBySkuCode(skuCode);
+
+    }
+
+    @Override
+    public List<Product> findByProductName(String productName) {
+        return productRepository.findByProductName(productName);
     }
 }

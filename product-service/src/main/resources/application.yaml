@@ -18,7 +18,7 @@ logging:
     root: info # Logging level of the application
     org.hibernate.type.descriptor.sql.BasicBinder: trace # Logging level of the SQL queries
     org.hibernate.SQL: trace # Logging level of the SQL queries
-    in.stackroute: debug
+    in.stackroute.product_service: debug
   pattern:
     console: "%d{dd/MM/yyy HH:mm:ss} %-5level - %msg%n" # Pattern of the console logs
     file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Pattern of the file logs

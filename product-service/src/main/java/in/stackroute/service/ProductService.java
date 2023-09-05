@@ -2,6 +2,8 @@ package in.stackroute.service;
 
 import in.stackroute.model.Product;
 
+import java.util.*;
+
 public interface ProductService {
 
     Product save(Product product);
@@ -11,6 +13,12 @@ public interface ProductService {
     Product update(Product product);
 
     void deleteById(int productId);
+
+    Optional<Product> findBySkuCode(String skuCode);
+
+    List<Product> findByProductName(String productName);
+
+
 
 
 }
