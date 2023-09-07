@@ -1,5 +1,27 @@
 server:
-  port: 8082
+  port: 0
 spring:
   application:
     name: order-service
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: orders_db
+logging:
+  level:
+    root: info # Logging level of the application
+    in.stackroute.order_service: debug
+    org.springframework.web.client.RestTemplate: debug # Logging requests made by the application to other services
+  pattern:
+    console: "%d{dd/MM/yyy HH:mm:ss} %-5level - %msg%n" # Pattern of the console logs
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Pattern of the file logs
+  file:
+    name: logs\order-service.log # Name of the log file
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB # Maximum size of the log file
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

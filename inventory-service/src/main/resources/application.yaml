@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 0
 spring:
   application:
     name: inventory-service
@@ -29,3 +29,7 @@ spring:
     logback:
       rollingpolicy:
         max-file-size: 10MB # Maximum size of the log file
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

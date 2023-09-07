@@ -4,36 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63fca670-63dd-46b1-a051-2eedfff75ca5" name="Changes" comment="Made a webstore-microservice app.Made different services like product, inventory, order. Implemented product service and also inventory services.">
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/dto/NewInventoryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/EmptyInventoryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/ProductNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiSubError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiValidationError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/ProductAlreadyExists.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiSubError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiValidationError.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/GlobalExceptionHandler.java" afterDir="false" />
+    <list default="true" id="63fca670-63dd-46b1-a051-2eedfff75ca5" name="Changes" comment="Implemented inventory services and made updates to the product service.">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/OrderItemDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/OrderItemsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/ProductsDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/OrderItems.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/OrderRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/ProductsPriceDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/dto/ProductsStockDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/model/Address.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/repository/OrderRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/service/OrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/src/main/java/in/stackroute/order_service/util/OrderConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registry-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/registry-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/controller/InventoryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/dto/InventoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/dto/InventoryDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/Inventory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/dto/InventoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/InventoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/dto/NewInventoryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/dto/NewInventoryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/EmptyInventoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/EmptyInventoryException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/ProductNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiError.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/handler/ApiError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiSubError.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/handler/ApiSubError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/ApiValidationError.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/handler/ApiValidationError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/exceptions/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/exceptions/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/model/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/repository/InventoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/repository/InventoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/service/InventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/java/in/stackroute/inventory_service/service/InventoryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/dto/ProductDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/util/ServiceUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/util/ServiceUtility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/ProductAlreadyExists.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/ProductAlreadyExists.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/ProductNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/ProductNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiError.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/handler/ApiError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiSubError.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/handler/ApiSubError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/ApiValidationError.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/handler/ApiValidationError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/exceptions/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/exceptions/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/service/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/service/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/util/ServiceUtility.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/in/stackroute/product_service/util/ServiceUtility.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +74,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -61,23 +90,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/CGI/java-advanced/account-restapi"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/CGI/java-advanced/account-restapi&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\CGI\microservice\webstore-microservice\product-service\src\main\java\in\stackroute\product_service" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.InventoryServiceMain">
     <configuration name="InventoryServiceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="in.stackroute.InventoryServiceMain" />
+      <option name="MAIN_CLASS_NAME" value="in.stackroute.inventory_service.InventoryServiceMain" />
       <module name="inventory-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="in.stackroute.*" />
+          <option name="PATTERN" value="in.stackroute.product_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,11 +121,11 @@
       </method>
     </configuration>
     <configuration name="OrderServiceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="in.stackroute.OrderServiceMain" />
+      <option name="MAIN_CLASS_NAME" value="in.stackroute.order_service.OrderServiceMain" />
       <module name="order-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="in.stackroute.*" />
+          <option name="PATTERN" value="in.stackroute.product_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,11 +134,24 @@
       </method>
     </configuration>
     <configuration name="ProductServiceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="in.stackroute.ProductServiceMain" />
+      <option name="MAIN_CLASS_NAME" value="in.stackroute.product_service.ProductServiceMain" />
       <module name="product-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="in.stackroute.*" />
+          <option name="PATTERN" value="in.stackroute.product_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegistryServiceMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="in.stackroute.registry_service.RegistryServiceMain" />
+      <module name="registry-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="in.stackroute.registry_service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,8 +162,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.InventoryServiceMain" />
-        <item itemvalue="Application.ProductServiceMain" />
         <item itemvalue="Application.OrderServiceMain" />
+        <item itemvalue="Application.ProductServiceMain" />
+        <item itemvalue="Application.RegistryServiceMain" />
       </list>
     </recent_temporary>
   </component>
@@ -136,11 +185,20 @@
       <option name="project" value="LOCAL" />
       <updated>1693831964897</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented inventory services and made updates to the product service.">
+      <option name="closed" value="true" />
+      <created>1693920408353</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1693920408354</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Made a webstore-microservice app.Made different services like product, inventory, order. Implemented product service and also inventory services." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a webstore-microservice app.Made different services like product, inventory, order. Implemented product service and also inventory services." />
+    <MESSAGE value="Implemented inventory services and made updates to the product service." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented inventory services and made updates to the product service." />
   </component>
 </project>

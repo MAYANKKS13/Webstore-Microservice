@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: registry-service
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+        defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+logging:
+  level:
+    root: info # Logging level of the application
+    in.stackroute.registry_service: warn
+  pattern:
+    console: "%d{dd/MM/yyy HH:mm:ss} %-5level - %msg%n" # Pattern of the console logs
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Pattern of the file logs
+  file:
+    name: logs\registry-service.log # Name of the log file
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB # Maximum size of the log file
